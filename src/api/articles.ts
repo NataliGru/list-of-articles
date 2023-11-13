@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { RequestParameters } from '../types/requestParameters';
-import { debounce } from 'lodash';
 
-const API_KEY = '2e06e03a7f9743a185db7dd20c3482ff';
+const API_KEY = 'e8c7b7ce9c674ae3a63e4ef456c681fd';
 const COUNTRY = 'us';
 
 const baseUrl = 'https://newsapi.org/v2/top-headlines';
