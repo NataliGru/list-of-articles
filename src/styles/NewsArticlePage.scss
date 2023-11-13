@@ -1,0 +1,123 @@
+@import './utils/variabels.scss';
+
+
+.button {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  &::after {
+    content: '';
+    font-size: 10px;
+    background-color: $lightColor;
+    border-radius: 5px;
+    position: absolute;
+    top: -15%;
+    right: 50%;
+    width: 100%;
+    opacity: 0;
+
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.add {
+  &::after {
+    content: 'add 10 articles';
+  }
+}
+
+.back {
+  &::after {
+    content: 'back to the top';
+  }
+}
+
+.search {
+  &__div {
+    position: relative;
+    height: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    border: 2px solid $midColor;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    background: none;
+    z-index: 1;
+  }
+
+  &__label {
+    position: absolute;
+    left: 5px;
+    top: 45%;
+    background-color: #fff;
+    color: $midColor;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+
+  &__clear {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 0;
+    left: 210px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+    }   
+  }
+}
+
+/*Input focus move up label*/
+.search__input:focus+.search__label {
+  top: -.5rem;
+  left: .8rem;
+  color:$darkColor;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.search__input:not(:placeholder-shown).search__input:not(:focus)+.search__label {
+  top: -.5rem;
+  left: .8rem;
+  z-index: 10;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/*Input focus*/
+.search__input:focus {
+  border: 2px solid $darkColor;
+  box-shadow: 0 3px 9px rgba(0,150,136, 0.4);
+}
+
+h1 {
+  color: $darkColor;
+  font-weight: bold;
+}
