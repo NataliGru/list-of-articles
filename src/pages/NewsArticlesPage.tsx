@@ -1,5 +1,4 @@
-import { ChangeEvent, useEffect, useRef, useState } from 'react'
-import { debounce } from 'lodash'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 import { motion } from 'framer-motion'
 
@@ -27,8 +26,6 @@ export const NewsArticlesPage = () => {
 
   const dispatch = useAppDispatch();
   const { news, loading, error } = useAppSelector((state) => state.newsArticles);
-
-  const searchParamsRef = useRef<RequestParameters>(searchParams);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
