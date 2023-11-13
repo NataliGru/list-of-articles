@@ -12,7 +12,6 @@ const userSlice = createSlice({
   initialState: {
     userArticles: [] as Article[],
     pinnedArticleId: null,
-    loading: false,
   } as UserState,
   reducers: {
     addArticle: (state, action: PayloadAction<Article>) => {
@@ -56,12 +55,10 @@ const userSlice = createSlice({
       }
     },
     loadUserArticles: (state) => {
-      state.loading = true;
       const storedUserArticles = localStorage.getItem('userArticles')
 
       if (storedUserArticles) {
         state.userArticles = JSON.parse(storedUserArticles)
-      state.loading = false;
       }
 
       const storedPinnedArticleId = localStorage.getItem('pinnedArticleId')

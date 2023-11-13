@@ -13,7 +13,7 @@ import { Loader } from '../components/Loader'
 export const UserArticlesPage = () => {
   const dispatch = useAppDispatch()
 
-  const { userArticles, loading } = useAppSelector((state) => state.userArticles)
+  const { userArticles } = useAppSelector((state) => state.userArticles)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -42,7 +42,6 @@ export const UserArticlesPage = () => {
 
       {isModalOpen && <AddingArticleForm onClose={closeModal} />}
 
-      {loading && <Loader />}
       <ArticlesList articles={userArticles} />
     </>
   )
