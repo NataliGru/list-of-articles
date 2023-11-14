@@ -7,8 +7,6 @@ import { loadUserArticles } from '../features/userArticles'
 import AddingArticleForm from '../components/AddingArticleForm'
 
 import '../styles/UserArticlesPage.scss'
-import { Loader } from '../components/Loader'
-
 
 export const UserArticlesPage = () => {
   const dispatch = useAppDispatch()

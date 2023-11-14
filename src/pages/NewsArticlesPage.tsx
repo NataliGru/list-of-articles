@@ -62,7 +62,7 @@ export const NewsArticlesPage = () => {
   const endOfNews = news.length === 0
 
   useEffect(() => {
-    newsActions.init(searchParams)
+    dispatch(newsActions.init(searchParams));
   }, [searchParams, dispatch])
 
   return (
